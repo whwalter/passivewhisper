@@ -14,7 +14,6 @@ var PassiveWhisper = PassiveWhisper || (function() {
 
         let args = msg.content.split(' ');
 
-
         // Split the message into command and argument(s)
         let command = args.shift().substring(1);
 
@@ -26,7 +25,7 @@ var PassiveWhisper = PassiveWhisper || (function() {
     	}
         let skill = args.shift();
 	    if (!ddSkillSet.has(skill)) {
-            sendChat("", "/w " + msg.who + " skill: " + skill + " not supported.");
+            sendChat(msg.who, "/w " + msg.who + " skill: " + skill + " not supported.");
             return;
         }
 
